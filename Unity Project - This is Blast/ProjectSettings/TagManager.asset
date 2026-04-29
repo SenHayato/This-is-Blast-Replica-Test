@@ -2,19 +2,11 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
-  - Tag1
-  - Tag2
-  - Tag3
-  - Tag4
-  - Tag5
-  - Tag6
-  - Tag7
-  - Tag8
-  - Tag9
-  - Tag10
   - GFUICanvas
+  - Cube
+  - Shooter
   layers:
   - Default
   - TransparentFX
@@ -85,3 +77,5 @@ TagManager:
   - name: Top
     uniqueID: 3355392013
     locked: 0
+  m_RenderingLayers:
+  - Default

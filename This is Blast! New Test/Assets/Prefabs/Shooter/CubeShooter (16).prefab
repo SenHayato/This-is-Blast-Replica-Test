@@ -491,5 +491,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetColor: 12
   fireRate: 0
-  ammo: 0
+  ammo: 20
   bullet: {fileID: 0}
+  ammoText: {fileID: 0}

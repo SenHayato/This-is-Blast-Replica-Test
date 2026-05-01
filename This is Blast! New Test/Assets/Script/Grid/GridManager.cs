@@ -9,6 +9,49 @@ public class GridManager : MonoBehaviour
 
     public CubeActive[,] grid;
 
+    public CubeActive cubePrefabs;
+
+    private void Start()
+    {
+        grid = new CubeActive[width, height];
+
+        // Spawn beberapa cube contoh
+        SpawnCube(new Vector2Int(0, 0));
+        SpawnCube(new Vector2Int(1, 0));
+        SpawnCube(new Vector2Int(2, 2));
+    }
+
+    public CubeActive SpawnCube(Vector2Int gridPos)
+    {
+        // Cek valid
+        if (!IsInsideGrid(gridPos))
+        {
+            Debug.LogWarning("Posisi di luar grid!");
+            return null;
+        }
+
+        // Cek apakah sudah ada cube
+        if (grid[gridPos.x, gridPos.y] != null)
+        {
+            Debug.LogWarning("Cell sudah terisi!");
+            return null;
+        }
+
+        // Ambil posisi world dari grid
+        Vector3 worldPos = GridToWorld(gridPos);
+
+        // Spawn object
+        CubeActive cube = Instantiate(cubePrefabs, worldPos, Quaternion.identity, transform);
+
+        // Set data ke cube
+        cube.gridPosition = gridPos;
+
+        // Masukkan ke array grid
+        grid[gridPos.x, gridPos.y] = cube;
+
+        return cube;
+    }
+
     public List<CubeActive> GetNeighbors(CubeActive cube)
     {
         List<CubeActive> neighbors = new List<CubeActive>();
@@ -82,7 +125,7 @@ public class GridManager : MonoBehaviour
                 Vector3 worldPos = transform.TransformPoint(localPos);
 
                 if (grid != null && x < width && y < height && grid[x, y] != null)
-                    Gizmos.color = Color.green;
+                    Gizmos.color = Color.yellow;
                 else
                     Gizmos.color = Color.red;
 

@@ -19,7 +19,7 @@ public class ShooterActive : MonoBehaviour
     string targetCube => targetColor.ToString();
     private void Awake()
     {
-        ammoText = GetComponentInChildren<TextMeshProUGUI>();
+        //ammoText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -100,7 +100,7 @@ public class ShooterActive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ammoText.text = ammo.ToString();
+        //ammoText.text = ammo.ToString();
         ShooterUpdateState();
 
         //if (test)

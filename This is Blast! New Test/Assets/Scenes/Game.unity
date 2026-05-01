@@ -1465,6 +1465,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriangleShooter3
       objectReference: {fileID: 0}
+    - target: {fileID: 3972417634654298422, guid: a60e5294b4701e24a9e88bd0a78ffc32, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5106572930352300635, guid: a60e5294b4701e24a9e88bd0a78ffc32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.881
@@ -1839,6 +1843,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1642742932638862542, guid: dbfcab88fe4074340a3aa27b0cabd039, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670630512635651476, guid: dbfcab88fe4074340a3aa27b0cabd039, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8498042187778291355, guid: dbfcab88fe4074340a3aa27b0cabd039, type: 3}
       propertyPath: m_Name
       value: CubeShooter (16)

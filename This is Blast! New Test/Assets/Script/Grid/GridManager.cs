@@ -45,15 +45,24 @@ public class GridManager : MonoBehaviour
     public Vector3 GridToWorld(Vector2Int gridPos)
     {
         Vector3 offset = new Vector3(width, 0, height) * 0.5f;
-        return new Vector3(gridPos.x * cellSize, 0, gridPos.y * cellSize) - offset;
+
+        Vector3 localPos = new Vector3(
+            gridPos.x * cellSize,
+            0,
+            gridPos.y * cellSize
+        ) - offset;
+
+        return transform.TransformPoint(localPos);
     }
 
     public Vector2Int WorldToGrid(Vector3 worldPos)
     {
         Vector3 offset = new Vector3(width, 0, height) * 0.5f;
 
-        int x = Mathf.RoundToInt((worldPos.x + offset.x) / cellSize);
-        int y = Mathf.RoundToInt((worldPos.z + offset.z) / cellSize);
+        Vector3 localPos = transform.InverseTransformPoint(worldPos);
+
+        int x = Mathf.RoundToInt((localPos.x + offset.x) / cellSize);
+        int y = Mathf.RoundToInt((localPos.z + offset.z) / cellSize);
 
         return new Vector2Int(x, y);
     }
@@ -69,15 +78,15 @@ public class GridManager : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                Vector3 pos = new Vector3(x * size, 0, y * size) - offset;
+                Vector3 localPos = new Vector3(x * size, 0, y * size) - offset;
+                Vector3 worldPos = transform.TransformPoint(localPos);
 
-                // Warna beda kalau ada cube
                 if (grid != null && x < width && y < height && grid[x, y] != null)
                     Gizmos.color = Color.green;
                 else
                     Gizmos.color = Color.red;
 
-                Gizmos.DrawWireCube(pos, new Vector3(size, 0.1f, size));
+                Gizmos.DrawWireCube(worldPos, new Vector3(size, 0.1f, size));
             }
         }
     }

@@ -16,16 +16,21 @@ public class ShooterActive : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammoText;
     //[SerializeField] bool test; //Bisa di hapus nanti
 
+    [Header("MovePosition")]
+    [SerializeField] GameObject[] moveToOut;
+
+    int outPost;
     string targetCube => targetColor.ToString();
     private void Awake()
     {
-        //ammoText = GetComponentInChildren<TextMeshProUGUI>();
+        ammoText = GetComponentInChildren<TextMeshProUGUI>();
+        moveToOut = GameObject.FindGameObjectsWithTag("MoveOut");
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        outPost = Random.Range(0, moveToOut.Length);
     }
 
     private void OnMouseDown()
@@ -59,12 +64,14 @@ public class ShooterActive : MonoBehaviour
 
     void ShootingBullet()
     {
-
+        transform.LookAt(shootingTarget.transform);
+        //Instantiate(bullet, transform.position, transform.rotation);
     }
 
     void MovingOut()
     {
-
+        transform.LookAt(moveToOut[outPost].transform.position);
+        transform.position = Vector3.MoveTowards(transform.position,moveToOut[outPost].transform.position, 4f * Time.deltaTime);
     }
 
     #endregion
@@ -100,7 +107,7 @@ public class ShooterActive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ammoText.text = ammo.ToString();
+        ammoText.text = ammo.ToString();
         ShooterUpdateState();
 
         //if (test)

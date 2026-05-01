@@ -28,6 +28,14 @@ public class ShooterActive : MonoBehaviour
 
     }
 
+    private void OnMouseDown()
+    {
+        if (isInteractable)
+        {
+            Debug.Log("Pindah State ke GoToPosision");
+        }
+    }
+
     #region ShooterState
     void MovingForward()
     {

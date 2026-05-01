@@ -452,6 +452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8853762107393187663}
   - component: {fileID: 814432011257515005}
+  - component: {fileID: 2670630512635651476}
   m_Layer: 0
   m_Name: CubeShooter (16)
   m_TagString: Shooter
@@ -490,7 +491,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: 12
+  shootingTarget: {fileID: 0}
+  shooterState: 0
+  isInteractable: 0
   fireRate: 0
   ammo: 20
   bullet: {fileID: 0}
   ammoText: {fileID: 0}
+--- !u!65 &2670630512635651476
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8498042187778291355}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

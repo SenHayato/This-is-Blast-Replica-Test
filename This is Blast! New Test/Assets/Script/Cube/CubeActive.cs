@@ -2,15 +2,7 @@ using UnityEngine;
 
 public class CubeActive : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public TargetType cubeColor;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Vector2Int gridPosition;
 }

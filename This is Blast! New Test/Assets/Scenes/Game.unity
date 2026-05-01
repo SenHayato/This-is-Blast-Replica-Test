@@ -1380,6 +1380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1393602570}
+  - component: {fileID: 1393602571}
   m_Layer: 0
   m_Name: CubeGrid
   m_TagString: Untagged
@@ -1404,6 +1405,21 @@ Transform:
   - {fileID: 111580008}
   m_Father: {fileID: 2101705048495816039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1393602571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393602569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721c71ef7889b604b80599f23bbae0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 0
+  height: 0
+  cellSize: 3
 --- !u!1001 &1434385058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1564,6 +1580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734448466}
   - component: {fileID: 1734448467}
+  - component: {fileID: 1734448468}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1602,6 +1619,20 @@ MonoBehaviour:
   levelText: {fileID: 994544111}
   levelNumber: 0
   cubesCount: 0
+--- !u!114 &1734448468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734448465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad8fd36a0670e14fbcd975f2fb121f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubeBlocks: []
+  cubeMoveSpeed: 0
 --- !u!1 &1815621063
 GameObject:
   m_ObjectHideFlags: 0
